@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax_Json</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+</head>
+<body>
+    <div class="weather_box">
+        <h3 id="city">CITY</h3>
+        <h1 id="country">Country</h1>
+        <h4><span id="Temp">00</span><sup>0</sup>C</h4>
+        
+        <ul class="list-inline">
+            <li><input type="text" id="weather_forecast"></li>
+            <li><button type="button" class="btn btn-info">Click Here</button></li>
+        </ul>
+        
+        
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script>
+            $(function(){
+                
+                $("button").click(function(){
+                    var City_name = $("input").val();
+                    GoWeather(City_name);
+                })
+                function GoWeather(City_name){
+                    $.ajax({
+                    url:"http://api.apixu.com/v1/forecast.json?key=0354bcb2b0484c0293191930170104&q="+ City_name,
+                    dataType:"Json",
+                    success:function(data){
+                    console.log(data);
+                        
+                        $("#city").text(data.location.name);
+                        $("#country").text(data.location.country);
+                        $("#Temp").text(data.current.temp_c);
+                }
+                })
+                }
+            })
+        </script>
+</body>
+</html>

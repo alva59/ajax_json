@@ -1,0 +1,25 @@
+body{
+    background: url(../images/bg-4.jpeg) no-repeat scroll 0 0;
+    background-size: cover;
+}
+
+
+
+.weather_box{
+    position: fixed;
+    top: 50%; left:50%; transform: translate(-50%, -50%);
+    text-align: center;
+    border: 1px solid #ddd;
+    padding: 40px;
+    height: auto;
+    width: 500px;
+    background: #31B0D5;
+    color: #fff;
+    border-radius: 6px;
+}
+ul.list-inline{background: #31B0D5;width: 315px;margin: 0 auto;padding: 8px;border-radius: 8px;}
+input#weather_forecast{
+    padding: 5px;
+    border-radius: 6px;
+    color: #000;
+}
