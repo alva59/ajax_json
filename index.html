@@ -31,7 +31,7 @@
                 })
                 function GoWeather(City_name){
                     $.ajax({
-                    url:"http://api.apixu.com/v1/forecast.json?key=0354bcb2b0484c0293191930170104&q="+ City_name,
+                    url:"https://api.apixu.com/v1/forecast.json?key=0354bcb2b0484c0293191930170104&q="+ City_name,
                     dataType:"Json",
                     success:function(data){
                     console.log(data);
